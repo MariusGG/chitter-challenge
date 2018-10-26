@@ -7,7 +7,7 @@ This is a small Twitter clone that will allow users to post messages to a public
 Domain model
 -------
 
-![Alt text](./Bookmarks_app_model.png)
+![Alt text](./Chitter_app.png)
 
 
 setup:

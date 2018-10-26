@@ -4,11 +4,12 @@ require 'sinatra/base'
 class ChitterApp < Sinatra::Base
 
   get '/' do
-    "Peep what's happening right now"
+    @chitter = Chitter.all
+    erb :index
   end
   get '/peeps' do
     @chitters = Chitter.all
-    erb :
+    erb :peeps
   end
 
   run! if app_file == $0

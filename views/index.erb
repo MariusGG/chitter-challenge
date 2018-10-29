@@ -24,16 +24,18 @@
     <main class="center">
       <form id="post_form" action="/new" method="post">
         <input class="peep_box" type="text" name="peep"   placeholder="Peep it here..." required>
-        <input class="peep_it" type="submit" value="Peep it!">
+        <input class="peep_it" type="submit" value="Peep It!">
       </form>
 
         <%@peep.each do |peep|%>
+        <div class="peep_wrap">
           <%if peep.username%>
             <b><%=peep.username%></b>
           <%end%>
           <%=peep.text%>
           <div class="peeptime">
             <%=peep.date%> <%=peep.time%><br><br><br>
+          </div>
           </div>
         <%end%>
       </main>

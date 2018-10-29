@@ -7,7 +7,7 @@ describe Chitter do
     scenario 'user sends a peep' do
     visit('/')
     fill_in 'peep', with: "I like pizza"
-    click_button 'Peep it!'
+    click_button 'Peep It!'
     expect(page).to have_content "I like pizza"
     end
   end

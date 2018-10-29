@@ -21,7 +21,7 @@ body {
 
 .header {
     display: inline-block;
-    background-color: #aa02ff;
+    background-color: #ffcae0;
     border: 1px solid #c1c1c1;
     border-width: 2px 0px;
     margin: 0;
@@ -46,6 +46,15 @@ body {
     box-shadow: 8px 8px rgb(208, 208, 208);
     padding: 20px 20px 10px 65px;
     font-size: 0.7em
+
+}
+
+.peep_wrap {
+    background-color: #ffe4ef;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    height: 50px;
 
 }
 
@@ -122,6 +131,11 @@ font-weight: bold;
 
 }
 
+.peeptime {
+  border-bottom: 20px;
+  background-color: 00000;
+}
+
 footer img {
   width: 10%;
   margin: 10px 0 10px 20px;
@@ -132,7 +146,7 @@ footer img {
   bottom: 0;
   width: 100%;
   height: 60px;
-  background: #aa01ff;
+  background: #ffcae0;
   position: fixed;
   left: 0;
   bottom: 0;

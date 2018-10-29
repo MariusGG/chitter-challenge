@@ -11,7 +11,7 @@ describe Chitter do
       described_class.new.add('Maybe caribbean food :)')
 
       peeps_test = Chitter.all.first
-      expect(peeps_test).to be_a Peep
+      expect(peeps_test).to be_a Chitter
       expect(peeps_test).to respond_to(:date)
       expect(peeps_test).to respond_to(:time)
     end

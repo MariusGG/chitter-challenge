@@ -3,44 +3,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" type="text/css" href="./chit_ter.css">
 </head>
 
-<body style='text-align: center'>
+<body>
+  <div class="container">
 
-  <div class="header">
-      <h1>Welcome to Chitter ; )</h1>
-  </div>
-
-  <div class="topnav">
+    <header class="header">
+      <img src="./logo.png" alt="chitter logo">
+      <h1>Chitter</h1>
+      <nav class="topnav">
         <% if @username %>
-      <a href="/sign_out"><%=@username %></a>
+        <a href="/sign_out"><%=@username %></a>
         <% else %>
-      <a href="/sign_in">Sign In</a>
+        <a class="sign_in" href="/sign_in">Sign In</a>
         <% end %>
+      </nav>
+    </header>
+
+    <main class="center">
+      <form id="post_form" action="/new" method="post">
+        <input class="peep_box" type="text" name="peep"   placeholder="Peep it here..." required>
+        <input class="peep_it" type="submit" value="Peep it!">
+      </form>
+
+        <%@peep.each do |peep|%>
+          <%if peep.username%>
+            <b><%=peep.username%></b>
+          <%end%>
+          <%=peep.text%>
+          <div class="peeptime">
+            <%=peep.date%> <%=peep.time%><br><br><br>
+          </div>
+        <%end%>
+      </main>
+
+      <footer class="footer">
+        <div class="footer_text">
+          <p>This website was built at <span>Makers Academy</span> by Marius Guei 2018</p>
+          <p>Website was built using <span>Ruby, Sinatra, PostgreSQL, Capybara, HTML and CSS</span>.</p>
+        </div>
+        <a href="/"><img src="makers-logo.png" alt="makers logo"></a>
+      </footer>
     </div>
-
-  <form action="/new" method="post">
-    <input type="text" name="peep"   placeholder="Peep it here..." required>
-    <input type="submit" value="Peep it!">
-  </form>
-
-    <%@peep.each do |peep|%>
-      <%if peep.username%>
-        <b><%=peep.username%></b>
-      <%end%>
-      <%=peep.text%>
-      <div class="peeptime">
-        <%=peep.date%> <%=peep.time%><br><br><br>
-      </div>
-    <%end%>
-
-    <footer class="footer">
-      <div class="footer_text">
-        <p>This website was built at <span>Makers Academy</span> by Marius Guei 2018</p>
-        <p>Website was built using <span>Ruby, Sinatra, PostgreSQL, Capybara, HTML and CSS</span>.</p>
-      </div>
-      <a href="/"><img src="makers-logo.png" alt="makers logo"></a>
-    </footer>
 
 </body>
 </html>

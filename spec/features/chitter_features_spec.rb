@@ -15,14 +15,14 @@ describe Chitter do
   feature 'Posting Peeps' do
   scenario 'I want to post a peep to chitter' do
     visit '/'
-    expect(page).to have_content 'Welcome to Chitter ; )'
+    expect(page).to have_content "Chitter"
 
     click_link 'Sign In'
-    fill_in :username, with: 'Mariusgg14'
+    fill_in :username, with: "Mariusgg14"
 
     click_button 'Sign In'
-    expect(page).to have_link 'Mariusgg14'
-    fill_in :peep, with: 'I want pizza'
+    expect(page).to have_link "Mariusgg14"
+    fill_in :peep, with: "I want pizza"
 
     click_button 'Peep It!'
     expect(page).to have_content "[\"Mariusgg14\"] I want pizza"
@@ -34,14 +34,14 @@ describe Chitter do
     scenario 'user can sign out of their account' do
       visit '/'
       click_link 'Sign In'
-      fill_in :username, with: 'Mariusgg14'
+      fill_in :username, with: "Mariusgg14"
 
       click_button 'Sign In'
 
       click_link 'Mariusgg14'
 
       click_button 'Sign Out'
-      expect(page).not_to have_content('Mariusgg14')
+      expect(page).not_to have_content("Mariusgg14")
       expect(page).to have_content('Sign In')
     end
   end

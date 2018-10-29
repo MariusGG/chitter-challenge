@@ -13,14 +13,14 @@
 
   <div class="topnav">
         <% if @username %>
-      <a href="/logout"><%=@username %></a>
+      <a href="/sign_out"><%=@username %></a>
         <% else %>
-      <a href="/login">Log In</a>
+      <a href="/sign_in">Sign In</a>
         <% end %>
     </div>
 
   <form action="/new" method="post">
-    <input type="text" name="peep"   placeholder="new peep..." required>
+    <input type="text" name="peep"   placeholder="Peep it here..." required>
     <input type="submit" value="Peep it!">
   </form>
 
@@ -41,6 +41,6 @@
       </div>
       <a href="/"><img src="makers-logo.png" alt="makers logo"></a>
     </footer>
-  </div>
+
 </body>
 </html>

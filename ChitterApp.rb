@@ -10,13 +10,13 @@ class ChitterApp < Sinatra::Base
   end
 
   get '/index' do
-    @peep = chitter.all
+    @peep = Chitter.all
     @username = session[:username]
     erb :index
   end
 
   post '/new' do
-    chitter.add(params[:peep], session[:username])
+    Chitter.add(params[:peep], session[:username])
     redirect '/index'
   end
 

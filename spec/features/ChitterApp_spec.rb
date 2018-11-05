@@ -3,7 +3,7 @@ require 'chitter'
 describe Chitter do
 
   subject(:chitter) { described_class.new( "hello people", "Mariusgg9", "2018-10-29", "00:16:00" )}
-  let(:chitter) { double text:, username:, date:, time: }
+  # let(:chitter) { double text:, username:, date:, time: }
 
   describe '.add' do
     it 'returns added peep and see the time of peep' do
